@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 将bean放入spring容器中 -->
+    <bean id="userDao" class="com.zt.dao.UserDao"/>
+
+    <!-- 别名 -->
+    <!-- <alias name="userDao" alias="userDao2"/> -->
+    <!-- 默认单例 singleton
+         非单例 prototype
+         lazy-init :放入Spring容器的Bean在容器启动时创建对象
+     -->
+<!--<bean id="userDao" class="com.zt.dao.UserDao" scope="prototype" lazy-init="true"/>-->
+
+</beans>
