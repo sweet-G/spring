@@ -8,6 +8,6 @@ package com.zt.dao;
 public class UserDao {
 
     public void save(){
-        System.out.println("success !");
-    }
+    System.out.println("success !");
+}
 }

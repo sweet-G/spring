@@ -14,4 +14,71 @@
      -->
 <!--<bean id="userDao" class="com.zt.dao.UserDao" scope="prototype" lazy-init="true"/>-->
 
+    <!-- 自动注入
+          autowire="byName" 根据需要注入的属性名在容器内寻找名称相同的Bean，如果找到就注入，找不到就不注入
+          autowire="byType" 根据需要注入的属性类型在容器找类型相同的Bean，如果找到就注入，找不到就不注入，如果找到多个类型
+                            相同的Bean，则抛出异常
+     -->
+
+    <!-- set方式注入 -->
+    <bean id="studentService" class="com.zt.service.StudentService">
+       <!--
+            name:set方法，去掉set首字母小写
+            ref:注入对象在spring容器中的id
+       -->
+        <property name="userDao" ref="userDao"/>
+        
+        <!--
+        <property name="userDao">
+            <ref bean="userDao"/>
+        </property>
+        -->
+
+        <!--
+        <property name="userDao">
+            <bean class="com.zt.dao.UserDao"/>
+        </property>
+        -->
+
+    </bean>
+
+    <!-- 基本类型注入 -->
+    <bean id="baseService" class="com.zt.service.BaseService">
+        <property name="id" value="1"/>
+        <property name="name" value="rose"/>
+        <property name="score" value="99.1"/>
+        <property name="stringList">
+            <list>
+                <value>zxc</value>
+                <value>sdx</value>
+            </list>
+        </property>
+        <property name="numSet">
+            <set>
+                <value>12</value>
+                <value>56</value>
+            </set>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="name" value="alex"/>
+                <entry key="age" value="23"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="address">jiaozuo</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 构造方法注入 -->
+    <!--<bean id="studentService" class="com.zt.service.StudentService">
+        <constructor-arg name="userDao" ref="userDao"/>
+
+        &lt;!&ndash; index:构造方法参数索引 &ndash;&gt;
+        &lt;!&ndash;  <constructor-arg index="0" ref="userDao"/>&ndash;&gt;
+
+       &lt;!&ndash; <constructor-arg type="com.kaishengit.dao.UserDao" ref="userDao"/>&ndash;&gt;
+    </bean>-->
 </beans>
