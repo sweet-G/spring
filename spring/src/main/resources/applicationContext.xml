@@ -27,7 +27,7 @@
             ref:注入对象在spring容器中的id
        -->
         <property name="userDao" ref="userDao"/>
-        
+
         <!--
         <property name="userDao">
             <ref bean="userDao"/>

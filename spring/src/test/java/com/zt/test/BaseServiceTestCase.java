@@ -21,7 +21,7 @@ public class BaseServiceTestCase {
 
         System.out.println(baseService.getId());
         System.out.println(baseService.getName());
-        System.out.println(baseService.getScroe());
+        System.out.println(baseService.getScore());
 
         List<String> stringList = baseService.getStringList();
         for(String str : stringList){
@@ -41,6 +41,7 @@ public class BaseServiceTestCase {
 
         Properties properties = baseService.getProperties();
         Enumeration<Object> keys =  properties.keys();
+
         while(keys.hasMoreElements()){
             Object key = keys.nextElement();
             Object value = properties.get(key);
