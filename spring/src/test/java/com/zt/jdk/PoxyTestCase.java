@@ -1,8 +1,8 @@
-package com.zt.test;
+package com.zt.jdk;
 
-import com.zt.proxy.Lenovo;
-import com.zt.proxy.MyInvocationHandler;
-import com.zt.proxy.Sale;
+import com.zt.proxy.jdk.Lenovo;
+import com.zt.proxy.jdk.MyInvocationHandler;
+import com.zt.proxy.jdk.Sale;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
@@ -20,6 +20,8 @@ public class PoxyTestCase {
 
         //创建MyInvocationHandler对象
         MyInvocationHandler myInvocationHandler = new MyInvocationHandler(lenovo);
+
+        //InvocationHandler invocationHandler = new MyInvocationHandler(lenovo);
 
         //动态产生代理类对象
         Sale sale = (Sale) Proxy.newProxyInstance(

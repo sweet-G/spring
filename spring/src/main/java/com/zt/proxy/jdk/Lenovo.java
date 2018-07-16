@@ -1,11 +1,11 @@
-package com.zt.proxy;
+package com.zt.proxy.jdk;
 
 /**
  * @author zhangtian
  * @date 2018/7/14
  */
 
-public class Lenovo implements Sale{
+public class Lenovo implements Sale {
 
     @Override
     public void save() {

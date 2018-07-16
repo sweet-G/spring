@@ -1,11 +1,10 @@
-package com.zt.proxy;
+package com.zt.proxy.jdk;
 
 /**
  * @author zhangtian
- * @date 2018/7/14
+ * @date 2018/7/16
  */
 
 public interface Sale {
-
     void save();
 }
