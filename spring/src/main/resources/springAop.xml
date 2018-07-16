@@ -11,8 +11,22 @@
         <aop:aspect ref="aopAspects">
             <!-- 切入点的具体位置-->
             <aop:pointcut id="myPoint" expression="execution(* com.zt.proxy..*.*(..))"/>
+            
             <!-- 通知类型的切入点位置 -->
+            <!-- 前置通知 -->
             <aop:before method="beforeAdvice" pointcut-ref="myPoint"/>
+
+            <!-- 后置通知 -->
+            <aop:after-returning method="afterAdvice" pointcut-ref="myPoint"/>
+
+            <!-- 异常通知 -->
+            <aop:after-throwing method="exceptionAdvice" pointcut-ref="myPoint"/>
+
+            <!-- 最终通知 -->
+            <aop:after method="finallyAdvice" pointcut-ref="myPoint"/>
+
+            <!-- 环绕通知 -->
+            <aop:around method="aroundAdvice" pointcut-ref="myPoint"/>
         </aop:aspect>
     </aop:config>
 
