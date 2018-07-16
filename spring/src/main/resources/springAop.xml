@@ -11,7 +11,7 @@
         <aop:aspect ref="aopAspects">
             <!-- 切入点的具体位置-->
             <aop:pointcut id="myPoint" expression="execution(* com.zt.proxy..*.*(..))"/>
-            
+
             <!-- 通知类型的切入点位置 -->
             <!-- 前置通知 -->
             <aop:before method="beforeAdvice" pointcut-ref="myPoint"/>
