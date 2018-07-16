@@ -20,21 +20,25 @@ public class AopAspects {
 
         System.out.println("前置通知");
     }
-    public void afterAdvice() {
+    public void afterAdvice(Object result) {
         System.out.println("后置通知");
+        System.out.println("result --> " + result);
+
     }
-    public void exceptionAdvice() {
-        System.out.println("异常通知");
+    public void exceptionAdvice(Exception exception) {
+        System.out.println("异常通知 --> " + exception.getMessage());
     }
     public void finallyAdvice() {
         System.out.println("最终通知");
     }
 
-    public void aroundAdvice(ProceedingJoinPoint joinPoint){
+    public Object aroundAdvice(ProceedingJoinPoint joinPoint){
 
+        Object result = null;
         try {
             System.out.println("exception before");
-            Object result = joinPoint.proceed();
+            //目标对象执行方法
+            result = joinPoint.proceed();
             System.out.println("exception after");
         } catch (Throwable throwable) {
             throwable.printStackTrace();
@@ -42,6 +46,9 @@ public class AopAspects {
         } finally {
             System.out.println("exception finally");
         }
+
+        return result;
+
     }
 
 }
