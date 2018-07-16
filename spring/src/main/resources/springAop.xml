@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="aopAspects" class="com.zt.proxy.aop.AopAspects"/>
+    <bean id="lenovo" class="com.zt.proxy.jdk.Lenovo"/>
+
+    <aop:config>
+        <!-- 配置依赖的通知类 -->
+        <aop:aspect ref="aopAspects">
+            <!-- 切入点的具体位置-->
+            <aop:pointcut id="myPoint" expression="execution(* com.zt.proxy..*.*(..))"/>
+            <!-- 通知类型的切入点位置 -->
+            <aop:before method="beforeAdvice" pointcut-ref="myPoint"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
