@@ -1,4 +1,4 @@
-package com.zt;
+package com.zt.entity;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
  * @date 2018/7/16
  */
 
-@Component
-@Aspect
+//@Component
+//@Aspect
 public class Aspects {
 
     @Pointcut("execution(* com.zt..*.*(..))")

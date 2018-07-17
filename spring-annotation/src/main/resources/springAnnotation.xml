@@ -10,4 +10,23 @@
 
     <!-- aop -->
     <aop:aspectj-autoproxy/>
+
+    <!-- 读取配置文件 -->
+    <context:property-placeholder location="classpath:config.properties"/>
+
+    <!-- 数据库
+        destroy-method=close在销毁容器时关闭
+    -->
+    <bean id="datasource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!-- 配置数据工具 -->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <!--<property name="dataSource" ref="datasource"/>-->
+        <constructor-arg name="dataSource" ref="datasource"/>
+    </bean>
 </beans>

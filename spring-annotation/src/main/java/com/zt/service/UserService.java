@@ -1,5 +1,6 @@
-package com.zt;
+package com.zt.service;
 
+import com.zt.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.zt;
+package com.zt.dao;
 
 import org.springframework.stereotype.Repository;
 
