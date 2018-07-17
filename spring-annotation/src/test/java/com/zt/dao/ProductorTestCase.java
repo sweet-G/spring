@@ -49,7 +49,6 @@ public class ProductorTestCase {
         int count = productorDao.count();
         System.out.println(count);
     }
-
     @Test
     public void testFindMapList(){
         List<Map<String, Object>> maps = productorDao.findMapList();
