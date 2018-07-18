@@ -1,5 +1,6 @@
 package com.zt.service;
 
+import com.zt.Application;
 import com.zt.dao.ProductorDao;
 import com.zt.entity.Productor;
 import org.junit.Test;
@@ -17,7 +18,8 @@ import java.util.List;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath:springAnnotation.xml")
+//@ContextConfiguration(locations = "classpath:springAnnotation.xml")
+@ContextConfiguration(classes = Application.class)
 public class ProductorServiceTestCase {
 
     @Autowired
