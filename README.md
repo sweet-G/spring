@@ -46,6 +46,8 @@ CGLib代理：不要求目标对象有接口，动态产生目标对象的子类
 
 ### Transaction
 
+### Spring+Mybatis整合
+
 
 
 
