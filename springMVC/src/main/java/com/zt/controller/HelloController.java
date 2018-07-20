@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @org.springframework.stereotype.Controller
-public class Controller {
+public class HelloController {
 
     //@RequestMapping(value = "/hello", method = {RequestMethod.POST,RequestMethod.GET})
     @GetMapping("/hello")
