@@ -13,5 +13,6 @@
 <body>
     This is home!
     <h3>welcome ${id},${username}</h3>
+    <img src="/static/img/1.jpg">
 </body>
 </html>
